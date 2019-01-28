@@ -7,16 +7,13 @@
 
     
 
-    <title>Laya Mouse Icon with animation | Hualin</title>
+    <title>mouse | Hualin</title>
     <meta name="author" content="Hualin">
-    
-    <meta name="description" content="Layabox game engine usage scenario
-1234567891011121314151617181920onEnable(): void &amp;#123;    Laya.Mouse.hide();    Laya.stage.on(Laya.Event.MOUSE_MOVE">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="Laya Mouse Icon with animation"/>
+    
     <meta property="og:site_name" content="Hualin"/>
 
     
@@ -178,71 +175,30 @@
 
     <main>
         <div class="container main-container">
-    <nav class="page-nav hide-on-small-only">
+    
+
+<nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">Current page(Categories)</span>
-        
-            
-
+        <span class="breadcrumb">Current page(Tags)</span>
         
 
+        
+            <a class="breadcrumb" href="/tags/mouse/">mouse</a>
         
     </div>
 </nav>
 
-<article>
-    <div class="card">
-        <div class="card-content">
-            
-
-            <div class="article-title">
-                
-    
-        <h1>Laya Mouse Icon with animation</h1>
-    
 
 
-            </div>
-            <time class="green-link-context" datetime="2019-01-28T14:25:23.000Z"><a href="/2019/01/28/laya-animation-mouse-icon/">2019-01-28</a></time>
-
-            <span id="busuanzi_container_page_pv" class="read-times-container">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_page_pv"></span>
-</span>
-
-            
-    <div class="tags-row">
+    <div class="collection mt-0">
         
-            <a href="/tags/layabox/" class="chip indigo">layabox</a>
-        
-            <a href="/tags/mouse/" class="chip indigo">mouse</a>
+            <a href="/2019/01/28/laya-animation-mouse-icon/" class="collection-item grey-text text-darken-1">
+                <time datetime="2019-01-28T14:25:23.000Z">2019-01-28</time>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                Laya Mouse Icon with animation
+            </a>
         
     </div>
-
-
-            <div class="toc green-link-context hide-on-med-and-down">
-    
-</div>
-
-
-            <div class="entry green-link-context">
-                <p>Layabox game engine usage scenario<br><img src="mouse-icon.png" alt="Mouse Icon" title="mouse icon"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">onEnable(): <span class="keyword">void</span> &#123;</span><br><span class="line">    Laya.Mouse.hide();</span><br><span class="line">    Laya.stage.on(Laya.Event.MOUSE_MOVE, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseMove);</span><br><span class="line">    Laya.stage.on(Laya.Event.MOUSE_DOWN, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseDown);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMouseDown()&#123;</span><br><span class="line">    <span class="comment">// this.hit is animation created in editor</span></span><br><span class="line">    <span class="keyword">this</span>.hit.play(<span class="number">0</span>, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMouseMove()&#123;</span><br><span class="line">    <span class="keyword">this</span>.pos(Laya.stage.mouseX - <span class="keyword">this</span>.width/<span class="number">2</span>, Laya.stage.mouseY - <span class="keyword">this</span>.height/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onDisable(): <span class="keyword">void</span> &#123;</span><br><span class="line">    Laya.Mouse.show();</span><br><span class="line">    Laya.stage.off(Laya.Event.MOUSE_DOWN, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseDown);</span><br><span class="line">    Laya.stage.off(Laya.Event.MOUSE_MOVE, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseMove);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The code <code>this.hit</code> is an animation created in editor.<br><img src="hit-animation.png" alt="hit" title="hit"></p>
-
-                
-
-
-
-            </div>
-			
-        </div>
-    </div>
-</article>
-
-
-
-
 
 
 </div>
