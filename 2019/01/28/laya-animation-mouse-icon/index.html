@@ -7,15 +7,16 @@
 
     
 
-    <title>About Me | Hualin</title>
+    <title>laya-animation-mouse-icon | Hualin</title>
     <meta name="author" content="Hualin">
     
-    <meta name="description" content="I am developer.Any question? Please feel free to contact hualin at joys.mobi">
+    <meta name="description" content="Layabox game engine usage scenario
+1234567891011121314151617181920onEnable(): void &amp;#123;trueLaya.Mouse.hide();trueLaya.stage.on(Laya.Event.MOUSE_MOVE">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="About Me"/>
+    <meta property="og:title" content="laya-animation-mouse-icon"/>
     <meta property="og:site_name" content="Hualin"/>
 
     
@@ -176,44 +177,69 @@
 
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+
         
 
+        
+    </div>
+</nav>
 
-<div class="container main-container">
-    <div class="card about-page row">
-        <div class="header indigo">
-            <div class="avatar-wrapper center-align">
-                <img class="avatar-image circle responsive-img" src="/imgs/header.jpg" alt="User Avatar">
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>laya-animation-mouse-icon</h1>
+    
+
+
             </div>
-            <div class="info center-align">
-                <p class="name">Hualin</p>
-                <p class="desc">I am developer</p>
-            </div>
+            <time class="green-link-context" datetime="2019-01-28T14:25:23.000Z"><a href="/2019/01/28/laya-animation-mouse-icon/">2019-01-28</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
-        </div>
-
-        <article>
-            <div class="card-content">
-                <section class="about-me">
-                    <h1 class="indigo-text">
-                        <i class="fa fa-street-view"></i>About</h1>
-                    <div class="entry green-link-context">
-                        <p>I am developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>
-
-                    </div>
-                </section>
-
-                
-
-                
-
-                
-            </div>
-        </article>
+    <div class="tags-row">
+        
+            <a href="/tags/layabox-mouse-icon/" class="chip indigo">layabox mouse icon</a>
+        
     </div>
 
+
+            <div class="toc green-link-context hide-on-med-and-down">
     
+</div>
+
+
+            <div class="entry green-link-context">
+                <p>Layabox game engine usage scenario<br><img src="mouse-icon.png" alt="Mouse Icon" title="mouse icon"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">onEnable(): <span class="keyword">void</span> &#123;</span><br><span class="line">trueLaya.Mouse.hide();</span><br><span class="line">trueLaya.stage.on(Laya.Event.MOUSE_MOVE, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseMove);</span><br><span class="line">trueLaya.stage.on(Laya.Event.MOUSE_DOWN, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseDown);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMouseDown()&#123;</span><br><span class="line">    <span class="comment">// this.hit is animation created in editor</span></span><br><span class="line">true<span class="keyword">this</span>.hit.play(<span class="number">0</span>, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMouseMove()&#123;</span><br><span class="line">true<span class="keyword">this</span>.pos(Laya.stage.mouseX - <span class="keyword">this</span>.width/<span class="number">2</span>, Laya.stage.mouseY - <span class="keyword">this</span>.height/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onDisable(): <span class="keyword">void</span> &#123;</span><br><span class="line">trueLaya.Mouse.show();</span><br><span class="line">trueLaya.stage.off(Laya.Event.MOUSE_DOWN, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseDown);</span><br><span class="line">trueLaya.stage.off(Laya.Event.MOUSE_MOVE, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseMove);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The code <code>this.hit</code> is an animation created in editor.<br><img src="hit-animation.png" alt="hit" title="hit"></p>
+
+                
+
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
 
 
 

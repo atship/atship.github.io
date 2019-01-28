@@ -3,25 +3,17 @@
   
     
     <entry>
-      <title><![CDATA[How to use markdown 123]]></title>
-      <url>/2016/02/28/How-to-use-markdown123/</url>
-      <content type="html"><![CDATA[<p>Abstract Here is your name.<br>Tody is am<br>haha<br>hoho</p>
-<h3 id="What-is-markdown"><a href="#What-is-markdown" class="headerlink" title="What is markdown?"></a>What is markdown?</h3><p>see wiki <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="external">What is Markdown</a></p>
-<h3 id="Why-use-it"><a href="#Why-use-it" class="headerlink" title="Why use it?"></a>Why use it?</h3><p>It is a convenient way for writing blog.</p>
-<h3 id="How-to-use-it"><a href="#How-to-use-it" class="headerlink" title="How to use it?"></a>How to use it?</h3><p>see wiki <a href="https://en.wikipedia.org/wiki/Markdown#Example" target="_blank" rel="external">Markdown Example</a></p>
-<h3 id="What’s-my-markdown-editor"><a href="#What’s-my-markdown-editor" class="headerlink" title="What’s my markdown editor?"></a>What’s my markdown editor?</h3><p>I am using <a href="https://atom.io/" target="_blank" rel="external">Atom Editor</a> for markdown editor.<br>The capture is <img src="/imgs/working_capture.png" alt="Working capture"></p>
+      <title><![CDATA[laya-animation-mouse-icon]]></title>
+      <url>/2019/01/28/laya-animation-mouse-icon/</url>
+      <content type="html"><![CDATA[<p>Layabox game engine usage scenario<br><img src="mouse-icon.png" alt="Mouse Icon" title="mouse icon"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">onEnable(): <span class="keyword">void</span> &#123;</span><br><span class="line">trueLaya.Mouse.hide();</span><br><span class="line">trueLaya.stage.on(Laya.Event.MOUSE_MOVE, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseMove);</span><br><span class="line">trueLaya.stage.on(Laya.Event.MOUSE_DOWN, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseDown);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMouseDown()&#123;</span><br><span class="line">    <span class="comment">// this.hit is animation created in editor</span></span><br><span class="line">true<span class="keyword">this</span>.hit.play(<span class="number">0</span>, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onMouseMove()&#123;</span><br><span class="line">true<span class="keyword">this</span>.pos(Laya.stage.mouseX - <span class="keyword">this</span>.width/<span class="number">2</span>, Laya.stage.mouseY - <span class="keyword">this</span>.height/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onDisable(): <span class="keyword">void</span> &#123;</span><br><span class="line">trueLaya.Mouse.show();</span><br><span class="line">trueLaya.stage.off(Laya.Event.MOUSE_DOWN, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseDown);</span><br><span class="line">trueLaya.stage.off(Laya.Event.MOUSE_MOVE, <span class="keyword">this</span>, <span class="keyword">this</span>.onMouseMove);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The code <code>this.hit</code> is an animation created in editor.<br><img src="hit-animation.png" alt="hit" title="hit"></p>
 ]]></content>
       
-        <categories>
-            
-            <category> Writing </category>
-            
-        </categories>
-        
         
         <tags>
             
-            <tag> tools </tag>
+            <tag> layabox mouse icon </tag>
             
         </tags>
         
@@ -39,7 +31,7 @@
     <entry>
       <title><![CDATA[About Me]]></title>
       <url>/about/index.html</url>
-      <content type="html"><![CDATA[<p>I am developer.</p>
+      <content type="html"><![CDATA[<p>I am developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>
 ]]></content>
     </entry>
     
