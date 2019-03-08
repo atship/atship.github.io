@@ -7,13 +7,15 @@
 
     
 
-    <title>layabox | Hualin</title>
+    <title>nodejs express simple guide | Hualin</title>
     <meta name="author" content="Hualin">
+    
+    <meta name="description" content="GuideCreate a folder, eg. 1![](nodejs-express-simple/create-folder.png)&amp;#10;&amp;#10;### Enter folder ```server``` and install express&amp;#10;```shell&amp;#10;np">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="nodejs express simple guide"/>
     <meta property="og:site_name" content="Hualin"/>
 
     
@@ -175,30 +177,93 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">Current page(Tags)</span>
+        <span class="breadcrumb">Current page(Categories)</span>
         
+            
 
         
-            <a class="breadcrumb" href="/tags/layabox/">layabox</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>nodejs express simple guide</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="green-link-context" datetime="2019-03-08T15:56:43.000Z"><a href="/2019/03/08/nodejs-express-simple/">2019-03-08</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2019/01/28/laya-animation-mouse-icon/" class="collection-item grey-text text-darken-1">
-                <time datetime="2019-01-28T14:25:23.000Z">2019-01-28</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Laya Mouse Icon with animation
-            </a>
+            <a href="/tags/express/" class="chip indigo">express</a>
+        
+            <a href="/tags/guide/" class="chip indigo">guide</a>
+        
+            <a href="/tags/nodejs/" class="chip indigo">nodejs</a>
         
     </div>
+
+
+            <div class="toc green-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#Guide"><span class="section table-of-contents-text">Guide</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Create-a-folder-eg"><span class="section table-of-contents-text">Create a folder, eg. 1![](nodejs-express-simple/create-folder.png)
+
+### Enter folder ```server``` and install express
+```shell
+npm install express --save</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Open-folder"><span class="section table-of-contents-text">Open folder in VSCode1![](nodejs-express-simple/open-vscode.png)
+
+### Create index.js
+```js
+var express = require("express")
+
+var app = express()
+
+app.get('/api', function(request, response){
+    // http://127.0.0.1/api?abc=123
+    response.send(request.query)
+}
+
+var server = app.listen(80, function(){
+    console.log("runing at 80")
+})</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#Start-Running"><span class="section table-of-contents-text">Start Running</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry green-link-context">
+                <h2 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h2><h3 id="Create-a-folder-eg"><a href="#Create-a-folder-eg" class="headerlink" title="Create a folder, eg. "></a>Create a folder, eg. <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](nodejs-express-simple/create-folder.png)&#10;&#10;### Enter folder ```server``` and install express&#10;```shell&#10;npm install express --save</span><br></pre></td></tr></table></figure></h3><p><img src="nodejs-express-simple/express-installed.png" alt=""></p>
+<h3 id="Open-folder"><a href="#Open-folder" class="headerlink" title="Open folder "></a>Open folder <figure class="highlight"><figcaption><span>in VSCode</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](nodejs-express-simple/open-vscode.png)&#10;&#10;### Create index.js&#10;```js&#10;var express = require(&#34;express&#34;)&#10;&#10;var app = express()&#10;&#10;app.get(&#39;/api&#39;, function(request, response)&#123;&#10;    // http://127.0.0.1/api?abc=123&#10;    response.send(request.query)&#10;&#125;&#10;&#10;var server = app.listen(80, function()&#123;&#10;    console.log(&#34;runing at 80&#34;)&#10;&#125;)</span><br></pre></td></tr></table></figure></h3><h3 id="Start-Running"><a href="#Start-Running" class="headerlink" title="Start Running"></a>Start Running</h3><p><img src="nodejs-express-simple/start-running.png" alt=""></p>
+<p><img src="nodejs-express-simple/running.png" alt=""></p>
+<p><img src="nodejs-express-simple/result.png" alt=""></p>
+
+                
+
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
