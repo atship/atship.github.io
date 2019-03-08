@@ -805,7 +805,7 @@ article .line:after {
 article code,
 article pre {
   font-family: Consolas, "微软雅黑", Monaco, Menlo, Courier New, monospace;
-  color: #333;
+  color: #ffb6c1;
   font-size: 1em;
 }
 article p code,
