@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[nodejs express simple guide]]></title>
       <url>/2019/03/08/nodejs-express-simple/</url>
-      <content type="html"><![CDATA[<h2 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h2><h3 id="Create-a-folder-eg-server"><a href="#Create-a-folder-eg-server" class="headerlink" title="Create a folder, eg. server"></a>Create a folder, eg. server</h3><p><img src="create-folder.png" alt=""></p>
+      <content type="html"><![CDATA[<h2 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h2><h3 id="Create-a-folder-eg-server"><a href="#Create-a-folder-eg-server" class="headerlink" title="Create a folder, eg. server"></a>Create a folder, eg. <code>server</code></h3><p><img src="create-folder.png" alt=""></p>
 <h3 id="Enter-folder-server-and-install-express"><a href="#Enter-folder-server-and-install-express" class="headerlink" title="Enter folder server and install express"></a>Enter folder server and install express</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save</span><br></pre></td></tr></table></figure>
 <p><img src="express-installed.png" alt=""></p>
 <h3 id="Open-folder-server-in-VSCode"><a href="#Open-folder-server-in-VSCode" class="headerlink" title="Open folder server in VSCode"></a>Open folder server in VSCode</h3><p><img src="open-vscode.png" alt=""></p>
