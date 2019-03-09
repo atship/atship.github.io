@@ -796,16 +796,7 @@ article .line:after {
   content: '';
   display: inline-block;
 }
-article code,
-article pre {
-  font-family: Consolas, "微软雅黑", Monaco, Menlo, Courier New, monospace;
-  color: #ffb6c1;
-  font-size: 1em;
-  background-color: rgba(27,31,35,0.05);
-  border-radius: 3px;
-}
-article p code,
-article li code {
+article code {
   margin: 0 3px;
   padding: 0 5px;
   border-radius: 5px;
