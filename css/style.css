@@ -105,6 +105,9 @@ blockquote {
 table {
   margin-bottom: 0em;
 }
+br {
+  height: 1px;
+}
 nav ul a:hover {
   background-color: rgba(0,0,0,0);
 }
