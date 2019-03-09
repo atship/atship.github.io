@@ -894,7 +894,7 @@ pre .deletion {
 figure.highlight {
   margin-left: 0;
   margin-right: 0;
-  overflow: auto;
+  overflow: scroll;
 }
 figure.highlight td {
   padding: 0;
