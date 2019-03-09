@@ -82,9 +82,9 @@
       
         <tags>
             
-            <tag> guide </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> guide </tag>
             
         </tags>
       
@@ -111,11 +111,11 @@
       
         <tags>
             
+            <tag> guide </tag>
+            
             <tag> Node.js </tag>
             
             <tag> express </tag>
-            
-            <tag> guide </tag>
             
         </tags>
       

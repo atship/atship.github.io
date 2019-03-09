@@ -804,7 +804,7 @@ article .line:after {
   display: inline-block;
 }
 article code {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace, Courier;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Droid Sans Mono, Menlo, monospace, Courier;
   margin: 0 3px;
   padding: 0 5px;
   border-radius: 5px;
