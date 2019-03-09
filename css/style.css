@@ -797,12 +797,13 @@ article .line:after {
   display: inline-block;
 }
 article code {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   margin: 0 3px;
   padding: 0 5px;
   border-radius: 5px;
   border: 1px solid #e0e0e0;
-  color: #bc35ad;
-  background-color: #eee;
+  color: #24292e;
+  background-color: #f6f8fa;
 }
 pre .keyword {
   color: #859900;
