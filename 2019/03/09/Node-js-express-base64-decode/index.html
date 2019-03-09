@@ -157,6 +157,14 @@ We can use Buffer to decode the data Buffer.from(data, &amp;#39;base64&amp;#3">
             
 
             <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/Hexo/">
+                    Hexo <span class="right">1</span></a>
+                
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/Node-js/">
                     Node-js <span class="right">2</span></a>
                 
@@ -167,14 +175,6 @@ We can use Buffer to decode the data Buffer.from(data, &amp;#39;base64&amp;#3">
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/Layabox-Engine/">
                     Layabox-Engine <span class="right">1</span></a>
-                
-            </li>
-
-        
-
-            <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/Hexo/">
-                    Hexo <span class="right">1</span></a>
                 
             </li>
 
@@ -252,12 +252,12 @@ We can use Buffer to decode the data Buffer.from(data, &amp;#39;base64&amp;#3">
 
 
             <div class="toc green-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#let-we-have-an-url"><span class="section table-of-contents-text">let we have an url</span></a></li></ol>
+    
 </div>
 
 
             <div class="entry green-link-context">
-                <h5 id="let-we-have-an-url"><a href="#let-we-have-an-url" class="headerlink" title="let we have an url"></a>let we have an url</h5><p><code>http://www.test.com/api?data=YWN0aW9uPWRlbGV0ZSZ1aWQ9MjU0MzI=</code></p>
+                <p>let we have an url<br><code>http://www.test.com/api?data=YWN0aW9uPWRlbGV0ZSZ1aWQ9MjU0MzI=</code></p>
 <ol>
 <li><p>We can use <code>Buffer</code> to decode the data <code>Buffer.from(data, &#39;base64&#39;)</code></p>
  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/api'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = req.query.data</span><br><span class="line">    <span class="keyword">var</span> bytes = Buffer.from(data, <span class="string">'base64'</span>)</span><br><span class="line">    <span class="keyword">var</span> realQuery = bytes.toString()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>

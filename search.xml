@@ -8,7 +8,7 @@
       <link href="/2019/03/09/Node-js-express-base64-decode/"/>
       <url>/2019/03/09/Node-js-express-base64-decode/</url>
       
-        <content type="html"><![CDATA[<h5 id="let-we-have-an-url"><a href="#let-we-have-an-url" class="headerlink" title="let we have an url"></a>let we have an url</h5><p><code>http://www.test.com/api?data=YWN0aW9uPWRlbGV0ZSZ1aWQ9MjU0MzI=</code></p><ol><li><p>We can use <code>Buffer</code> to decode the data <code>Buffer.from(data, &#39;base64&#39;)</code></p> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/api'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = req.query.data</span><br><span class="line">    <span class="keyword">var</span> bytes = Buffer.from(data, <span class="string">'base64'</span>)</span><br><span class="line">    <span class="keyword">var</span> realQuery = bytes.toString()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p> <img src="query-string.png" alt></p></li><li><p>Now we get the real query strings and we require Node.js module <code>querystring</code> to parse it</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> queryParser = <span class="built_in">require</span>(<span class="string">'querystring'</span>)</span><br><span class="line"><span class="keyword">var</span> jsonData = queryParser.parse(realQuery)</span><br><span class="line"><span class="built_in">console</span>.log(jsonData)</span><br></pre></td></tr></table></figure></li><li><p>The result<br><img src="base64-result.png" alt></p></li></ol>]]></content>
+        <content type="html"><![CDATA[<p>let we have an url<br><code>http://www.test.com/api?data=YWN0aW9uPWRlbGV0ZSZ1aWQ9MjU0MzI=</code></p><ol><li><p>We can use <code>Buffer</code> to decode the data <code>Buffer.from(data, &#39;base64&#39;)</code></p> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/api'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = req.query.data</span><br><span class="line">    <span class="keyword">var</span> bytes = Buffer.from(data, <span class="string">'base64'</span>)</span><br><span class="line">    <span class="keyword">var</span> realQuery = bytes.toString()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p> <img src="query-string.png" alt></p></li><li><p>Now we get the real query strings and we require Node.js module <code>querystring</code> to parse it</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> queryParser = <span class="built_in">require</span>(<span class="string">'querystring'</span>)</span><br><span class="line"><span class="keyword">var</span> jsonData = queryParser.parse(realQuery)</span><br><span class="line"><span class="built_in">console</span>.log(jsonData)</span><br></pre></td></tr></table></figure></li><li><p>The result<br><img src="base64-result.png" alt></p></li></ol>]]></content>
       
       
       <categories>
@@ -76,11 +76,11 @@
       
         <tags>
             
+            <tag> guide </tag>
+            
             <tag> Node.js </tag>
             
             <tag> express </tag>
-            
-            <tag> guide </tag>
             
         </tags>
       
@@ -121,22 +121,22 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>About Me</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>I am a developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>About Me</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<p>I am a developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

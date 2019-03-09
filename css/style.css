@@ -103,7 +103,7 @@ blockquote {
   padding: 0.6rem 0.6rem 0.6rem 1.2rem;
 }
 table {
-  margin-bottom: 1.5em;
+  margin-bottom: 0em;
 }
 nav ul a:hover {
   background-color: rgba(0,0,0,0);
@@ -887,7 +887,7 @@ pre .deletion {
 figure.highlight {
   margin-left: 0;
   margin-right: 0;
-  overflow: auto;
+  overflow: inherit;
 }
 figure.highlight td {
   padding: 0;
