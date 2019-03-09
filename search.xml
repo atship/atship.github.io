@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[nodejs express simple guide]]></title>
+      <title><![CDATA[Node.js Express Simple Guide]]></title>
       <url>/2019/03/08/nodejs-express-simple/</url>
       <content type="html"><![CDATA[<h2 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h2><h3 id="Create-a-folder-eg-server"><a href="#Create-a-folder-eg-server" class="headerlink" title="Create a folder, eg. server"></a>Create a folder, eg. <code>server</code></h3><p><img src="create-folder.png" alt=""></p>
 <h3 id="Enter-folder-server-and-init-nodejs-project"><a href="#Enter-folder-server-and-init-nodejs-project" class="headerlink" title="Enter folder server and init nodejs project"></a>Enter folder <code>server</code> and init nodejs project</h3><p><img src="init-project.png" alt=""></p>
@@ -16,14 +16,20 @@
 <p><img src="result.png" alt=""></p>
 ]]></content>
       
+        <categories>
+            
+            <category> Node.js </category>
+            
+        </categories>
+        
         
         <tags>
+            
+            <tag> Node.js </tag>
             
             <tag> express </tag>
             
             <tag> guide </tag>
-            
-            <tag> nodejs </tag>
             
         </tags>
         
@@ -70,7 +76,7 @@
   
     
     <entry>
-      <title><![CDATA[tags]]></title>
+      <title><![CDATA[Tags]]></title>
       <url>/tags/index.html</url>
       <content type="html"></content>
     </entry>
