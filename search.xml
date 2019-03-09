@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[Hexo-Quick-Start-Guide]]></title>
+      <title><![CDATA[Hexo Quick Start Guide]]></title>
       <url>/2019/03/09/hexo-quick-start-guide/</url>
       <content type="html"><![CDATA[<h3 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h3><h4 id="Install-hexo-globally"><a href="#Install-hexo-globally" class="headerlink" title="Install hexo globally"></a>Install hexo globally</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <h4 id="Create-your-site"><a href="#Create-your-site" class="headerlink" title="Create your site"></a>Create your site</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
