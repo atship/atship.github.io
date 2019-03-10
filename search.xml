@@ -142,9 +142,9 @@
             
             <tag> Node.js </tag>
             
-            <tag> express </tag>
-            
             <tag> guide </tag>
+            
+            <tag> express </tag>
             
         </tags>
       
@@ -185,22 +185,22 @@
     
     
     <entry>
-      <title>About Me</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<p>I am a developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>About Me</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>I am a developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>]]></content>
       
     </entry>
     
