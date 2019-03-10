@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Android Hide Navigation Bar Automatically</title>
+      <link href="/2019/03/10/android-hide-navigation-bar-automatically/"/>
+      <url>/2019/03/10/android-hide-navigation-bar-automatically/</url>
+      
+        <content type="html"><![CDATA[<p>If you want to hide the navigation bar and use full screen area to draw your content, you can just do it with <code>view.setSystemUiVisibility</code> in function <code>onWindowFocusChanged</code> of class <code>Activity</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onWindowFocusChanged</span><span class="params">(<span class="keyword">boolean</span> hasFocus)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onWindowFocusChanged(hasFocus);</span><br><span class="line">    <span class="keyword">if</span> (hasFocus) &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> visibility;</span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">19</span>) &#123;</span><br><span class="line">            visibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION</span><br><span class="line">                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</span><br><span class="line">                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY</span><br><span class="line">                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            visibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION</span><br><span class="line">                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</span><br><span class="line">                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;</span><br><span class="line">        &#125;</span><br><span class="line">        getWindow().getDecorView().setSystemUiVisibility(visibility);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><ol><li>The flag <code>View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</code> indicates that the layout content will draw behind the navigation bar</li><li>The flag <code>View.SYSTEM_UI_FLAG_LAYOUT_STABLE</code> indicates that the layout height will not changes when the system ui appear and disapper</li><li>The flag <code>View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY</code> indicates that the system ui will automatically disapper after it appear for seconds</li><li>The flag <code>View.SYSTEM_UI_FLAG_HIDE_NAVIGATION</code> indicates that the navigation bar will be hidden</li><li>The final result<br><img src="auto-hide.gif" alt></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> UI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Navigation Bar </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Node.js Express With Redis</title>
       <link href="/2019/03/09/Node-js-Express-with-Redis/"/>
       <url>/2019/03/09/Node-js-Express-with-Redis/</url>
@@ -156,22 +185,22 @@
     
     
     <entry>
-      <title>About Me</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<p>I am a developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>About Me</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>I am a developer.<br>Any question? Please feel free to contact hualin at joys.mobi</p>]]></content>
       
     </entry>
     
