@@ -7,13 +7,17 @@
 
     
 
-    <title>Hexo | Hualin</title>
+    <title>Android Exclude X86 So Files | Hualin</title>
     <meta name="author" content="Hualin">
+    
+    <meta name="description" content="We need remove any dynamic library files such as x86, x86_64 in android for reduce APK file size.
+That’s how we can do it:
+Set in file ```build.gradle">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="Android Exclude X86 So Files">
     <meta property="og:site_name" content="Hualin">
 
     
@@ -231,30 +235,92 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
         <span class="breadcrumb">Current page(Categories)</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/Android/">Android</a>
+
 
         
-            <a class="breadcrumb" href="/categories/Hexo/">Hexo</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>Android Exclude X86 So Files</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="green-link-context" datetime="2019-05-18T07:07:07.000Z"><a href="/2019/05/18/android-exclude-x86-so-files/">2019-05-18</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2019/03/09/hexo-quick-start-guide/" class="collection-item grey-text text-darken-1">
-                <time datetime="2019-03-09T06:02:10.000Z">2019-03-09</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Hexo Quick Start Guide
-            </a>
+            <a href="/tags/Android/" class="chip indigo">Android</a>
+        
+            <a href="/tags/ABI-filters/" class="chip indigo">ABI filters</a>
+        
+            <a href="/tags/x86/" class="chip indigo">x86</a>
+        
+            <a href="/tags/x86-64/" class="chip indigo">x86_64</a>
+        
+            <a href="/tags/armeabi/" class="chip indigo">armeabi</a>
+        
+            <a href="/tags/mips/" class="chip indigo">mips</a>
         
     </div>
+
+
+            <div class="toc green-link-context hide-on-med-and-down">
+    
+</div>
+
+
+            <div class="entry green-link-context">
+                <p>We need remove any dynamic library files such as x86, x86_64 in android for reduce APK file size.</p>
+<p>That’s how we can do it:</p>
+<p>Set <figure class="highlight plain"><figcaption><span>in file ```build.gradle``` that under application module</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```java</span><br><span class="line">android &#123;</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        ...</span><br><span class="line">        ndk &#123;</span><br><span class="line">            abiFilters &quot;arm64-v8a&quot;, &quot;armeabi-v7a&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The above configs will keep arm64-v8a and armeabi-v7a, and remove x86 x86_64 mips etc.</p>
+<p>If you want to remove x86 x86_64 only in release mode, you should move the above configs to <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```java</span><br><span class="line">android &#123;</span><br><span class="line">    defaultConfig &#123;...&#125;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            ndk &#123;</span><br><span class="line">                abiFilters &quot;arm64-v8a&quot;, &quot;armeabi-v7a&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+                <p style="display: block;">
+
+
+
+<span class="green-link-context" style="float: right; font-size: 12px;">
+    <a href="/2019/03/10/android-hide-navigation-bar-automatically/" rel="next" title="Android Hide Navigation Bar Automatically">
+    Next: Android Hide Navigation Bar Automatically
+  </a>
+</span>
+
+</p>
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
