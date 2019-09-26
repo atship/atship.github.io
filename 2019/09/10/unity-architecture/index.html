@@ -7,13 +7,32 @@
 
     
 
-    <title>base64 | Hualin</title>
+    <title>Unity Architecture | Hualin</title>
     <meta name="author" content="Hualin">
+    
+    <meta name="description" content="The basic unity3d architecture
+Scene Graphic
+GameObject
+Component
+
+
+Resources
+Prefab
+Texture
+Spine Animation
+Texture Atlas
+text
+Script
+etc.
+
+
+
+1, Scen">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="Unity Architecture">
     <meta property="og:site_name" content="Hualin">
 
     
@@ -239,30 +258,143 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
-        <span class="breadcrumb">Current page(Tags)</span>
+        <span class="breadcrumb">Current page(Categories)</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/Unity3D/">Unity3D</a>
+
 
         
-            <a class="breadcrumb" href="/tags/base64/">base64</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>Unity Architecture</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="green-link-context" datetime="2019-09-10T13:53:16.000Z"><a href="/2019/09/10/unity-architecture/">2019-09-10</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2019/03/09/Node-js-express-base64-decode/" class="collection-item grey-text text-darken-1">
-                <time datetime="2019-03-09T07:16:21.000Z">2019-03-09</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Node.js Express Base64 Decode
-            </a>
+            <a href="/tags/Unity3D/" class="chip indigo">Unity3D</a>
+        
+            <a href="/tags/Architecture/" class="chip indigo">Architecture</a>
+        
+            <a href="/tags/GameObject/" class="chip indigo">GameObject</a>
+        
+            <a href="/tags/Component/" class="chip indigo">Component</a>
+        
+            <a href="/tags/Scene-Graphic/" class="chip indigo">Scene Graphic</a>
         
     </div>
+
+
+            <div class="toc green-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#The-basic-unity3d-architecture"><span class="section table-of-contents-text">The basic unity3d architecture</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-Scene-Graphic"><span class="section table-of-contents-text">1, Scene Graphic</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-Life-Cycle-of-a-Script-that-extends-MonoBehaviour"><span class="section table-of-contents-text">2, Life Cycle of a Script that extends MonoBehaviour</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-Life-Cycle-of-a-Script-that-not-extend-MonoBehaviour"><span class="section table-of-contents-text">3, Life Cycle of a Script that not extend MonoBehaviour</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-How-to-move-GameObject-into-other-GameObject-for-Compositing-complex-object"><span class="section table-of-contents-text">4, How to move GameObject into other GameObject for Compositing complex object</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-The-order-of-the-Scripts-in-the-Scene"><span class="section table-of-contents-text">5, The order of the Scripts in the Scene</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-The-best-practice-of-reference-GameObject-Resources-in-MonoBehaviour"><span class="section table-of-contents-text">6, The best practice of reference GameObject/Resources in MonoBehaviour</span></a></li></ol>
+</div>
+
+
+            <div class="entry green-link-context">
+                <h3 id="The-basic-unity3d-architecture"><a href="#The-basic-unity3d-architecture" class="headerlink" title="The basic unity3d architecture"></a>The basic unity3d architecture</h3><ul>
+<li>Scene Graphic<ul>
+<li>GameObject</li>
+<li>Component</li>
+</ul>
+</li>
+<li>Resources<ul>
+<li>Prefab</li>
+<li>Texture</li>
+<li>Spine Animation</li>
+<li>Texture Atlas</li>
+<li>text</li>
+<li>Script</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-Scene-Graphic"><a href="#1-Scene-Graphic" class="headerlink" title="1, Scene Graphic"></a>1, Scene Graphic</h3><p>That every thing in the Scene is <code>GameObject</code>, and the behaviour of the GameObject is <code>MonoBehaviour</code>, the script that can add to the GameObject as a <code>Component</code>.</p>
+<p>If the GameObject is disabled in the Editor, the Components that has been added to it will not be called until we call <code>go.SetActive(true)</code> in other scripts. Therefore if you find the <code>SkeletonGraphic.AnimationState == null</code>, may be you have been disable it.</p>
+<h3 id="2-Life-Cycle-of-a-Script-that-extends-MonoBehaviour"><a href="#2-Life-Cycle-of-a-Script-that-extends-MonoBehaviour" class="headerlink" title="2, Life Cycle of a Script that extends MonoBehaviour"></a>2, Life Cycle of a Script that extends MonoBehaviour</h3><p>If the GameObject is disabled in the editor, it will be silent and not be called, you can’t <code>GameObject.Find</code> it either.</p>
+<p>Otherwise, the GameObject’s Script will be called after been <code>Instantiate</code></p>
+<ul>
+<li><code>SceneManager.LoadScene</code></li>
+<li><code>Awake</code> called once time before destroyed</li>
+<li><code>OnEnable</code> called when <code>SetActive(true)</code> or after <code>Instantiate</code></li>
+<li><code>Start</code> called once time before destroyed</li>
+<li><code>FixedUpdate</code> called one more time each frame, according to the Physics system</li>
+<li><code>Update</code> called each frame</li>
+<li><code>LateUpdate</code> called each frame after all script <code>Update</code></li>
+<li><code>OnDisable</code> called when <code>SetActive(false)</code></li>
+<li><code>OnDestroy</code> called when it <code>Object.Destroy</code> or <code>SceneManager.UnloadScene</code></li>
+</ul>
+<h3 id="3-Life-Cycle-of-a-Script-that-not-extend-MonoBehaviour"><a href="#3-Life-Cycle-of-a-Script-that-not-extend-MonoBehaviour" class="headerlink" title="3, Life Cycle of a Script that not extend MonoBehaviour"></a>3, Life Cycle of a Script that not extend MonoBehaviour</h3><p>Well, it’s life cycle is according to you, you let it die, it die, you let it live, it lives.</p>
+<h3 id="4-How-to-move-GameObject-into-other-GameObject-for-Compositing-complex-object"><a href="#4-How-to-move-GameObject-into-other-GameObject-for-Compositing-complex-object" class="headerlink" title="4, How to move GameObject into other GameObject for Compositing complex object"></a>4, How to move GameObject into other GameObject for Compositing complex object</h3><p>Easy, <code>this.gameObject.transform.SetParent(otherGameObject.transform, false/true)</code></p>
+<ul>
+<li>false indicates this game object will move to other game object position, well, the <code>transform.localPosition = new Vector3(0, 0, 0)</code></li>
+<li>true indicates this game object stay in origin position, like below<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var worldPos = this.gameObject.transform.position;</span><br><span class="line">this.gameObject.transform.SetParent(other.gameObject.transform, false);</span><br><span class="line">this.gameObject.transform.position = worldPos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>If the GameObject that created under Canvas, the transform is <code>RectTransform</code>, the <code>localPosition</code> is <code>anchoredPosition</code></p>
+<h3 id="5-The-order-of-the-Scripts-in-the-Scene"><a href="#5-The-order-of-the-Scripts-in-the-Scene" class="headerlink" title="5, The order of the Scripts in the Scene"></a>5, The order of the Scripts in the Scene</h3><ul>
+<li><p>The Components in one GameObject</p>
+<p> it will be called one by one</p>
+</li>
+<li><p>The Components among many GameObjects</p>
+<p>the order is not defined, but we know that all scripts will be <code>Awake</code> first and then <code>Start</code> etc. Therefore, we can initialize the Component itself in <code>Awake</code> and then interactive with other Components in/after <code>Start</code></p>
+</li>
+</ul>
+<h3 id="6-The-best-practice-of-reference-GameObject-Resources-in-MonoBehaviour"><a href="#6-The-best-practice-of-reference-GameObject-Resources-in-MonoBehaviour" class="headerlink" title="6, The best practice of reference GameObject/Resources in MonoBehaviour"></a>6, The best practice of reference GameObject/Resources in MonoBehaviour</h3><ul>
+<li><p>Static GameObject in the Scene</p>
+<p>we can define <code>public</code> field in MonoBehaviour and add it to the GameObject and drag the corresponding target into the Component in the editor <code>Inspector</code></p>
+</li>
+<li><p>Dynamic GameObject created in runtime</p>
+<p>we can do it like step 1 but we drag the prefab to the field, and then we will call <code>Instantiate(prefab)</code> to create GameObject, further more, we can create GameObject pool for reusing the GameObject without create it and destroy it again and again.</p>
+</li>
+<li><p>Don’t use <code>GameObject.Find</code>, if you have to, use <code>this.transform.Find</code> to find in children instead.</p>
+</li>
+</ul>
+
+                <p style="display: block;">
+
+
+
+<span class="green-link-context" style="float: right; font-size: 12px;">
+    <a href="/2019/05/18/android-exclude-x86-so-files/" rel="next" title="Android Exclude X86 So Files">
+    Next: Android Exclude X86 So Files
+  </a>
+</span>
+
+</p>
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
