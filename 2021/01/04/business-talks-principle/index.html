@@ -403,6 +403,142 @@
                 <p style="display: block;">
 
 
+### Why we need Lua C API?
+The answer is simple, we want to use the libraries written in C/C++ etc. These libraries make our lives easy. Another reason is that we want to let the others extend our application easily.
+
+### How to use Lua C API?
+First, we must know the Lua Stack mechanism.
+```c
+lua_pushnumber(L, number)
+lua_pushstring(L, "hello")
+lua_pushlightuserdata(L, &f)
+```
+The code above make the Stack like this
+```lua
+    bottom
+- - - - - - -
+-3  number  1
+-2  "hello" 2
+-1 (void*)f 3
+- - - - - - -
+     top
+```
+And the Lua called C function ``f(a, b, c)``, the Stack would be
+```lua
+       | -3 -2 -1 |
+bottom |  a  b  c | top
+       |  1  2  3 | 
+```
+because the Lua push the parameters from left to right.
+
+Second, we must know the Lua C API how to use the Stack, these informations are listed in [https://www.lua.org/manual/5.4/manual.html](Lua manual).
+
+Finally, we need know how to handle the errors with Lua C API. Again, these informations are listed in Lua manual.
+
+### How to create a library
+create C functions
+```c
+#include <stdio.h>
+#include <lua.h>
+#include <lauxlib.h>
+#include <string.h>
+#include <stdlib.h>
+
+// lua code: hello("Billy")
+static int say_hello(lua_State* L){
+    // get the parameter from the Stack
+    const char* name = luaL_checklstring(L, 1);
+    char buf[12];
+    snprintf(buf, 12, "Hello %s", name);
+    // push the return value to the Stack
+    lua_pushstring(L, buf);
+    // tell Lua the function has only one return value
+    return 1;
+}
+
+int luaopen_hello(lua_State* L){
+    const struct luaL_Reg fs[] = {
+        {"hello", say_hello},
+        {NULL, NULL}
+    };
+    lua_newlib(L, fs);
+    
+    return 1;
+}
+```
+We can now compile it with gcc
+```sh
+gcc -O2 -shared -fPIC `pkg-config lua --cflags --libs` -o hello.so
+```
+and we can copy the hello.so to the Lua lib dir ```/usr/local/lib/lua/5.4/hello.so```
+OR we can use luarocks to build and install the library, ```sudo luarocks make/build hello-1-0.rockspec```, but this is out of my article now.
+
+We can now use hello library in Lua:
+```lua
+local hello = require 'hello'
+print(hello.hello("Jim"))
+```
+When we want to use third parties library written in C, we can do it like this, now we take libvips for an example.
+```c
+#include <vips/vips.h>
+
+// lua code: open("/tmp/tmp1.png")
+static int vips_open(lua_State* L){
+    VipsImage* img = vips_image_new_from_file(f, "access", VIPS_ACCESS_SEQUENTIAL, NULL);
+    if (!img){
+        vips_error_exit(NULL);
+    }
+    // because the img is struct VipsImage, this type is not supported in Lua, in other words, this is an user data, we use light user data because we did not create img with lua_newuserdata
+    lua_pushlightuserdata(L, img);
+    return 1;
+}
+
+// lua code: save(img, "/tmp/tmp2.png")
+static int vips_save(lua_State* L){
+    VipsImage* img = lua_touserdata(L, 1);
+    const char* f = luaL_checkstring(L, 2);
+    if (vips_image_write_to_file(img, f, NULL)){
+        vips_error_exit(NULL);
+    }
+    return 0;
+}
+
+int luaopen_hello(lua_State* L){
+    const struct luaL_Reg fs[] = {
+        {"hello", say_hello},
+        {"open", vips_open},
+        {"save", vips_save}
+        {NULL, NULL}
+    };
+    lua_newlib(L, fs);
+    
+    if (VIPS_INIT("hello")){
+        vips_error_exit(NULL);
+    }
+    
+    return 1;
+}
+```
+We compile it with gcc:
+```sh
+gcc -O2 -shared -fPIC `pkg-config lua --cflags --libs` `pkgconfig vips --cflags --libs` -o hello.so
+```
+Because we use libvips library, we need specify the libvips' header files and dynamic lib path
+
+now we can use libvips in lua:
+```lua
+local hello = require 'hello'
+print(hello.hello("vips"))
+local test_img = hello.open("./test.png")
+hello.save(test_img, "./test-copy.png")
+```
+
+### How to write a application with emmbeded Lua?
+That's simple, read the ```main``` function in ```lua.c```. Attention: call Lua C API in Lua protected mode as you can as possible, that is say, do your script in the function that started by lua_pcall, this way would prevent many strange crash, mem leaks etc, therefore, Lua recommend us use lua_newuserdata instead of light userdata, the Lua's GC will collect the userdata carefully but skip light userdata at all.
+
+### Why do I need to know this?
+um.... because the libvips lua binding uses luajit which is legacy(it is rubbish nowadays, it do not support Lua5.3, Lua5.4, yes), and lua-cjson can't compile with Lua5.4, and maybe other libs are outdated without maintainer etc. It's a big pain, right? But now, I can write a simple binding for myself, right? We can heal ourself freely.
+			
 
 <span class="green-link-context" style="float: right; font-size: 12px;">
     <a href="/2019/09/10/unity-architecture/" rel="next" title="Unity Architecture">
