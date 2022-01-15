@@ -155,30 +155,6 @@
             
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/Node-js/">
-                    Node-js <span class="right">3</span></a>
-                
-            </li>
-
-        
-
-            <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/Node-js/Redis/">
-                    Redis <span class="right">1</span></a>
-                
-            </li>
-
-        
-
-            <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/Node-js/Express/">
-                    Express <span class="right">2</span></a>
-                
-            </li>
-
-        
-
-            <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/Android/">
                     Android <span class="right">2</span></a>
                 
@@ -195,8 +171,24 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/Hexo/">
-                    Hexo <span class="right">1</span></a>
+                <a class="no-padding" href="/categories/Node-js/">
+                    Node-js <span class="right">3</span></a>
+                
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/Node-js/Express/">
+                    Express <span class="right">2</span></a>
+                
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/Node-js/Redis/">
+                    Redis <span class="right">1</span></a>
                 
             </li>
 
@@ -213,6 +205,14 @@
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/Unity3D/">
                     Unity3D <span class="right">1</span></a>
+                
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/Hexo/">
+                    Hexo <span class="right">1</span></a>
                 
             </li>
 
@@ -276,7 +276,13 @@
             
     <div class="tags-row">
         
-            <a href="/tags/lua-c-api-tutorial/" class="chip indigo">lua c api tutorial</a>
+            <a href="/tags/lua/" class="chip indigo">lua</a>
+        
+            <a href="/tags/c/" class="chip indigo">c</a>
+        
+            <a href="/tags/api/" class="chip indigo">api</a>
+        
+            <a href="/tags/tutorial/" class="chip indigo">tutorial</a>
         
     </div>
 
@@ -292,7 +298,7 @@
 <p>The code above make the Stack like this<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    bottom</span><br><span class="line">- - - - - - -</span><br><span class="line"><span class="number">-3</span>  number  <span class="number">1</span></span><br><span class="line"><span class="number">-2</span>  <span class="string">"hello"</span> <span class="number">2</span></span><br><span class="line"><span class="number">-1</span> (void*)f <span class="number">3</span></span><br><span class="line">- - - - - - -</span><br><span class="line">     top</span><br></pre></td></tr></table></figure></p>
 <p>And the Lua called C function <code>f(a, b, c)</code>, the Stack would be<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">       | <span class="number">-3</span> <span class="number">-2</span> <span class="number">-1</span> |</span><br><span class="line">bottom |  a  b  c | top</span><br><span class="line">       |  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span> |</span><br></pre></td></tr></table></figure></p>
 <p>because the Lua push the parameters from left to right.</p>
-<p>Second, we must know the Lua C API how to use the Stack, these informations are listed in <a href="Lua manual">https://www.lua.org/manual/5.4/manual.html</a>.</p>
+<p>Second, we must know the Lua C API how to use the Stack, these informations are listed in <a href="https://www.lua.org/manual/5.4/manual.html" target="_blank" rel="noopener">Lua manual</a>.</p>
 <p>Finally, we need know how to handle the errors with Lua C API. Again, these informations are listed in Lua manual.</p>
 <h3 id="How-to-create-a-library"><a href="#How-to-create-a-library" class="headerlink" title="How to create a library"></a>How to create a library</h3><p>create C functions<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lua.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;lauxlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// lua code: hello("Billy")</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">say_hello</span><span class="params">(lua_State* L)</span></span>&#123;</span><br><span class="line">    <span class="comment">// get the parameter from the Stack</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span>* name = luaL_checklstring(L, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">12</span>];</span><br><span class="line">    <span class="built_in">snprintf</span>(buf, <span class="number">12</span>, <span class="string">"Hello %s"</span>, name);</span><br><span class="line">    <span class="comment">// push the return value to the Stack</span></span><br><span class="line">    lua_pushstring(L, buf);</span><br><span class="line">    <span class="comment">// tell Lua the function has only one return value</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">luaopen_hello</span><span class="params">(lua_State* L)</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">luaL_Reg</span> <span class="title">fs</span>[] = &#123;</span></span><br><span class="line">        &#123;<span class="string">"hello"</span>, say_hello&#125;,</span><br><span class="line">        &#123;<span class="literal">NULL</span>, <span class="literal">NULL</span>&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    lua_newlib(L, fs);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>We can now compile it with gcc<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -O2 -shared -fPIC `pkg-config lua --cflags --libs` -o hello.so</span><br></pre></td></tr></table></figure></p>
@@ -305,6 +311,12 @@
 <h3 id="Why-do-I-need-to-know-this"><a href="#Why-do-I-need-to-know-this" class="headerlink" title="Why do I need to know this?"></a>Why do I need to know this?</h3><p>um…. because the libvips lua binding uses luajit which is legacy(it is rubbish nowadays, it do not support Lua5.3, Lua5.4, yes), and lua-cjson can’t compile with Lua5.4, and maybe other libs are outdated without maintainer etc. It’s a big pain, right? But now, I can write a simple binding for myself, right? We can heal ourself freely.</p>
 
                 <p style="display: block;">
+
+<span class="green-link-context" style="float:left; font-size: 12px;">
+    <a href="/2022/01/15/logic/" rel="prev" title="Logic Fundamental">
+    Prev: Logic Fundamental
+  </a>
+</span>
 
 
 
